@@ -1,6 +1,9 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./header.css";
 
 const Header = () => {
+  const [sideBar, setSideBar] = useState(false);
   return (
     <div className="headerContainer">
       <div className="webHeader">
@@ -34,6 +37,7 @@ const Header = () => {
               src={require("../../assests/icon_menu_white.png")}
               alt=""
               className="burger"
+              onClick={() => setSideBar(true)}
             />
           </div>
           <div className="mobileLogo">
@@ -48,6 +52,33 @@ const Header = () => {
           <img src={require("../../assests/icon_search_white.png")} alt="" />
         </div>
       </div>
+      {sideBar ? (
+        <div className="sideBarConatiner">
+          <NavLink
+            to="/home"
+            className="LinksName"
+            onClick={() => setSideBar(false)}
+          >
+            HOME
+          </NavLink>
+          <NavLink
+            to="/favourites"
+            className="LinksName"
+            onClick={() => setSideBar(false)}
+          >
+            FAVOURITE
+          </NavLink>
+          <NavLink
+            to="/recents"
+            className="LinksName"
+            onClick={() => setSideBar(false)}
+          >
+            RECENT SEARCH
+          </NavLink>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

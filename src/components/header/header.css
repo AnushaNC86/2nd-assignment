@@ -44,6 +44,7 @@ img.searchIcn {
 
 .mobileHeader {
     display: none;
+    padding: 4% 3%;
 }
 
 .mobileLeft {
@@ -55,6 +56,26 @@ img.searchIcn {
 
 img.mobLogo {
     height: 24px;
+}
+
+.sideBarConatiner {
+
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 7rem;
+    bottom: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem;
+
+}
+
+.sideBarConatiner {
+    display: none;
 }
 
 @media screen and (max-width:780px) {
@@ -69,6 +90,9 @@ img.mobLogo {
         display: none;
     }
 
+    .sideBarConatiner {
+        display: flex;
+    }
 
 
 }
