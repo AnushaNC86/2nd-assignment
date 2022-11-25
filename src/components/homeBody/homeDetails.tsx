@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./homeDetails.css";
 import Switch from "react-switch";
+
 const HomeDetails = (props: any) => {
   const [checked, setChecked] = useState(false);
   const handleChange = () => {
